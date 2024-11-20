@@ -1,46 +1,46 @@
-.logo{
-    max-width: 318px;
-    display: block;
+.logo {
+  max-width: 318px;
+  display: block;
 }
-.btn_prev{
-    width: 39px;
-    display: block;
-    margin: 0 8px 0 0 ;
+.btn_prev {
+  width: 39px;
+  display: block;
+  margin: 0 8px 0 0;
 }
-.title_page{
-    font-family: 'Aeroport'; 
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 20px; 
+.title_page {
+  font-family: "Aeroport";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 20px;
 }
-.header{
-    display: flex;
-    gap: 37px;
-    align-items: center;
-    padding: 15px 23px 0;
-    max-width: 2000px;
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+.header {
+  display: flex;
+  gap: 37px;
+  align-items: center;
+  padding: 15px 23px 0;
+  max-width: 2000px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-@media screen and (max-width: 1600px){
-    .logo{
-        max-width: 160px;
-    }
-    .title_page{
-        font-size: 30px;
-    }
+@media screen and (max-width: 1600px) {
+  .logo {
+    max-width: 160px;
+  }
+  .title_page {
+    font-size: 30px;
+  }
 }
-@media screen and (max-width: 767px){
-   .header{
-    padding:10px;
+@media screen and (max-width: 767px) {
+  .header {
+    padding: 10px;
     gap: 10px;
-   }
-   .btn_prev{
+  }
+  .btn_prev {
     max-width: 26px;
-   }
-   .title_page{
+  }
+  .title_page {
     font-size: 26px;
-   }
+  }
 }

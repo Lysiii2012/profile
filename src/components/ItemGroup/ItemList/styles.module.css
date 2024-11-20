@@ -1,114 +1,115 @@
 /* .section{
     max-width: 500px;
 } */
-.card{
-    padding: 53px 32px 32px 44px;
-    background: #D9D9D9;
-    border-radius: 24px;
-    max-width: 500px;
-    width: 100%;
-    min-width: 300px;
-    box-sizing: border-box;
-    height: 290px;
-    overflow-y: auto;
-    display: flex; 
-    justify-content: space-between;
-    flex-direction: column;
+.card {
+  padding: 53px 32px 32px 44px;
+  background: #d9d9d9;
+  border-radius: 24px;
+  max-width: 500px;
+  width: 100%;
+  min-width: 300px;
+  box-sizing: border-box;
+  height: 290px;
+  overflow-y: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
-.card p{
-    font-family: "Inter";
-    font-size: 32px;
-    font-weight: 500;
-    line-height: 20px; 
+.card p {
+  font-family: "Inter";
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 20px;
 }
-.card button{
-    color: #00000080;
-    font-size: 66px;
-    border: none;
-    background: none;
-    padding: 0;
-    line-height: .6;
-    margin: 0 0 0 auto;
+.card button {
+  color: #00000080;
+  font-size: 66px;
+  border: none;
+  background: none;
+  padding: 0;
+  line-height: 0.6;
+  margin: 0 0 0 auto;
 }
-.section h2{
-    font-family: "Inter";
-    font-size: 48px;
-    font-weight: 600;
-    line-height: 1;  
-    margin: 0 0 40px;
+.section h2 {
+  font-family: "Inter";
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1;
+  margin: 0 0 40px;
 }
-.cards{
-    display: grid;
-    grid-template-columns: 1fr ;
-    flex-wrap: wrap;
-    gap: 20px;
+.cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-wrap: wrap;
+  gap: 20px;
 }
-.cards h3{
-    font-size: 42px;
-    margin:10px 0 20px;
-    text-align: center;
+.cards h3 {
+  font-size: 42px;
+  margin: 10px 0 20px;
+  text-align: center;
 }
-.card_new { 
-    max-width: 500px;
-    width: max-content;
-    min-width: 500px;
-    background: #D9D9D9;
-    padding: 30px;
-    box-sizing: border-box;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.card_new {
+  max-width: 500px;
+  width: max-content;
+  min-width: 500px;
+  background: #d9d9d9;
+  padding: 30px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.card_new button{
-    display: block;
-    margin: 20px 0 0 auto;
+.card_new button {
+  display: block;
+  margin: 20px 0 0 auto;
 }
-.card_img{
-    max-width: 500px;
-    height: 200px;
-    margin: 0 auto;
-    overflow: hidden;
+.card_img {
+  max-width: 500px;
+  height: 200px;
+  margin: 0 auto;
+  overflow: hidden;
 }
-.card_img img{
-    height: 100%;
-    max-width: 1000px;
-    max-height: 1000px;
-    object-fit: cover;
-    object-position: center;
+.card_img img {
+  height: 100%;
+  max-width: 1000px;
+  max-height: 1000px;
+  object-fit: cover;
+  object-position: center;
 }
-@media screen and (max-width: 1600px){
-    .item_group h2{
-        font-size: 40px;
-    }
-    /* .card{
+@media screen and (max-width: 1600px) {
+  .item_group h2 {
+    font-size: 40px;
+  }
+  /* .card{
         padding:30px 20px;
         width: 400px;
     } */
 }
-@media screen and (max-width: 1199px){
-    .cards{
-        grid-template-columns: 1fr 1fr;
-        gap: 30px;
-    }
-    .card, .card_new{
-        width: 100%;
-        padding: 30px 20px;
-        max-width: 100%;
-        min-width: 100%;
-    }
+@media screen and (max-width: 1199px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  .card,
+  .card_new {
+    width: 100%;
+    padding: 30px 20px;
+    max-width: 100%;
+    min-width: 100%;
+  }
 }
-@media screen and (max-width: 767px){
-    .cards{
-        grid-template-columns: 1fr;
-    }
-    .section h2{
-        font-size: 30px;
-    }
-    .card p{
-        font-size: 16px;
-    }
-    .card button{
-        font-size: 30px;
-    }
-} 
+@media screen and (max-width: 767px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .section h2 {
+    font-size: 30px;
+  }
+  .card p {
+    font-size: 16px;
+  }
+  .card button {
+    font-size: 30px;
+  }
+}

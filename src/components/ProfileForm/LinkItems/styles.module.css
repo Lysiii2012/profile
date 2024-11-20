@@ -1,43 +1,43 @@
-.new_links input{
-    padding: 10px 0;
-    background: transparent;
-    border: none; 
-    border-bottom: 1.41px solid #00000061;
-    width: 100%;  
-    height: auto;
-    margin: 0;
+.new_links input {
+  padding: 10px 0;
+  background: transparent;
+  border: none;
+  border-bottom: 1.41px solid #00000061;
+  width: 100%;
+  height: auto;
+  margin: 0;
 }
 .new_links {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    margin: 0 0 10px;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0 0 10px;
 }
-.new_links input:focus{
-    outline: none;
+.new_links input:focus {
+  outline: none;
 }
-.button_add_item{
-    font-size: 30px;
-    color: #3888E7;
-    line-height: .5;
-    padding: 0;
-    margin: 0 0 0 7px;
+.button_add_item {
+  font-size: 30px;
+  color: #3888e7;
+  line-height: 0.5;
+  padding: 0;
+  margin: 0 0 0 7px;
 }
-.item{ 
-    display: flex;
-    font-size: 18px;
-    align-items: center;
-    justify-content: space-between;
-    gap: 30px;
-    margin: 0 0 10px;
+.item {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 0 0 10px;
 }
-.item img{
-    width: 20px;
+.item img {
+  width: 20px;
 }
-div div .item>p{
-    position: static;
-    color: rgb(47, 47, 47);
+div div .item > p {
+  position: static;
+  color: rgb(47, 47, 47);
 }
-div div .item>p a{
-    color: #0d64ce;
+div div .item > p a {
+  color: #0d64ce;
 }

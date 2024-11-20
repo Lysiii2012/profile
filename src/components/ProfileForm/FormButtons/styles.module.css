@@ -1,25 +1,25 @@
-.form_btn_group button{
-    background: #3888E7;
-    padding: 0 20px;
-    width: 160px;
-    height: 50px;
-    color: #fff;
-    font-weight: 600;
-    border-radius: 10px;
-    font-size: 24px;
+.form_btn_group button {
+  background: #3888e7;
+  padding: 0 20px;
+  width: 160px;
+  height: 50px;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 24px;
+}
+.form_btn_group {
+  display: flex;
+  gap: 30px;
+  justify-content: end;
+}
+@media screen and (max-width: 480px) {
+  .form_btn_group {
+    flex-direction: column;
+    max-width: 400px;
+    margin: 30px auto 0;
   }
-  .form_btn_group{
-    display: flex;
-    gap: 30px;
-    justify-content: end;
+  .form_btn_group button {
+    width: 100%;
   }
-  @media screen and (max-width: 480px) {
-    .form_btn_group{
-      flex-direction: column;
-      max-width: 400px;
-      margin: 30px auto 0;
-    }
-    .form_btn_group button{
-      width: 100%;
-    }
-  }
+}

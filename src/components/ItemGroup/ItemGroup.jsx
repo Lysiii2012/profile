@@ -7,8 +7,7 @@ const ItemGroup = () => {
     const [isPopUpVisible, setIsPopUpVisible] = useState(false);
     const [popupType, setPopupType] = useState("");
     const [items, setItems] = useState([]);
-
-    // Загрузка данных из localStorage при монтировании компонента
+ 
     useEffect(() => {
         const savedItems = JSON.parse(localStorage.getItem("items")) || [];
         setItems(savedItems);
@@ -26,14 +25,14 @@ const ItemGroup = () => {
 
     const onCreateItem = (newItem) => {
         const updatedItems = [...items, newItem];
-        setItems(updatedItems); // Обновляем состояние
-        localStorage.setItem("items", JSON.stringify(updatedItems)); // Синхронизируем с localStorage
+        setItems(updatedItems);  
+        localStorage.setItem("items", JSON.stringify(updatedItems));  
     };
 
     const handleDeleteItem = (id) => {
         const updatedItems = items.filter(item => item.id !== id);
-        setItems(updatedItems); // Обновляем состояние
-        localStorage.setItem("items", JSON.stringify(updatedItems)); // Синхронизируем с localStorage
+        setItems(updatedItems); 
+        localStorage.setItem("items", JSON.stringify(updatedItems));  
     };
 
     return (
@@ -42,14 +41,14 @@ const ItemGroup = () => {
                 title="Projects:" 
                 buttonText="Create project" 
                 onButtonClick={() => handleButtonClick("project")}
-                items={items.filter(item => item.type === "project")} // Отображать только проекты
+                items={items.filter(item => item.type === "project")}  
                 deleteItemClick={handleDeleteItem}
             />
             <ItemList 
                 title="Tasks:" 
                 buttonText="Create task" 
                 onButtonClick={() => handleButtonClick("task")}
-                items={items.filter(item => item.type === "task")} // Отображать только задачи
+                items={items.filter(item => item.type === "task")}  
                 deleteItemClick={handleDeleteItem}
             />
             

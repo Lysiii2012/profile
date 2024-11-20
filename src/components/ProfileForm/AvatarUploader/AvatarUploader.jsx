@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
-import styles from './styles.module.css';
-import ava from '../../../media/avatar.svg'
+import styles from "./styles.module.css";
+import ava from "../../../media/avatar.svg";
 
 const AvatarUploader = ({ avatar, isEditing, onAvatarChange }) => {
   const fileInputRef = useRef();
@@ -15,12 +15,15 @@ const AvatarUploader = ({ avatar, isEditing, onAvatarChange }) => {
   };
 
   return (
-    <div className={styles.avatar_container} onClick={() => isEditing && fileInputRef.current.click()}>
+    <div
+      className={styles.avatar_container}
+      onClick={() => isEditing && fileInputRef.current.click()}
+    >
       {avatar ? (
         <img src={avatar} alt="Avatar" className={styles.avatar_preview} />
       ) : (
         <div className={styles.avatar_placeholder}>
-          <img src={ava} alt="photo" className={styles.camera_icon}/>
+          <img src={ava} alt="photo" className={styles.camera_icon} />
         </div>
       )}
       {isEditing && (
@@ -37,4 +40,3 @@ const AvatarUploader = ({ avatar, isEditing, onAvatarChange }) => {
 };
 
 export default AvatarUploader;
- 

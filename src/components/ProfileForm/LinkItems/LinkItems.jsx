@@ -1,22 +1,22 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
-import del from '../../../media/delete.svg'
+import del from "../../../media/delete.svg";
 
 const LinkItems = ({ label, items, onAddItem, onDeleteItem, disabled }) => {
-  const [newItemLink, setNewItemLink] = useState(""); // Локальное состояние для ссылки
-  const [newItemDescription, setNewItemDescription] = useState(""); // Локальное состояние для описания
+  const [newItemLink, setNewItemLink] = useState("");
+  const [newItemDescription, setNewItemDescription] = useState("");
 
   const handleAddItem = () => {
     if (newItemLink.trim() && newItemDescription.trim()) {
       const newItem = { link: newItemLink, description: newItemDescription };
-      onAddItem(newItem); // Передаем новый элемент (объект с link и description) в родительский компонент
-      setNewItemLink(""); // Очищаем поле ссылки
-      setNewItemDescription(""); // Очищаем поле описания
+      onAddItem(newItem);
+      setNewItemLink("");
+      setNewItemDescription("");
     }
   };
 
   const handleDeleteItem = (item) => {
-    onDeleteItem(item);  
+    onDeleteItem(item);
   };
 
   return (
@@ -26,7 +26,9 @@ const LinkItems = ({ label, items, onAddItem, onDeleteItem, disabled }) => {
         <div className={styles.links_group}>
           {items.map((item, index) => (
             <div key={index} className={styles.item}>
-              <p>{item.description} - <a href={item.link}>{item.link}</a></p>
+              <p>
+                {item.description} - <a href={item.link}>{item.link}</a>
+              </p>
               {!disabled && (
                 <button
                   className={styles.delete}
@@ -52,15 +54,17 @@ const LinkItems = ({ label, items, onAddItem, onDeleteItem, disabled }) => {
                 value={newItemDescription}
                 onChange={(e) => setNewItemDescription(e.target.value)}
                 placeholder="Link"
-              /> 
+              />
             </>
           )}
         </div>
-        <button 
-          type="button" 
+        <button
+          type="button"
           className={styles.button_add_item}
-          onClick={handleAddItem} 
-          disabled={disabled || !newItemLink.trim() || !newItemDescription.trim()}
+          onClick={handleAddItem}
+          disabled={
+            disabled || !newItemLink.trim() || !newItemDescription.trim()
+          }
         >
           +
         </button>
