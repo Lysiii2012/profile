@@ -1,0 +1,13 @@
+.item_group{
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+@media screen and (max-width: 1199px){
+    .item_group{
+        max-width: 100%;
+        width: 100%;
+    }
+}
+ 

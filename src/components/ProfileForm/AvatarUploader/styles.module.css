@@ -1,0 +1,36 @@
+.avatar_placeholder, .avatar_container{
+    width: 120px;
+    height: 120px; 
+    border-radius: 50%;
+    background: #D9D9D9; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .4s linear;
+}
+.avatar_placeholder, .avatar_container:hover{
+    box-shadow: 0 2px 6px #0d7dc269;
+}
+.avatar_container{
+       margin: 0 auto 27px;
+}
+.avatar_container .camera_icon{
+    width: 42px;
+    height: 42px; 
+}
+.avatar_container img{
+    max-width: 2000px;
+    max-height: 2000px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.avatar_container button{
+    position: absolute;
+    top: 0;
+  }
+  .avatar_container{
+    position: relative;
+  }

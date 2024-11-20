@@ -1,0 +1,14 @@
+.popUp_container{
+    position: fixed;
+    top: 30%;
+    width: 300px;
+    left: calc(50% - 150px );
+    padding: 40px 20px;
+    background: #0385e2ce;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 40px;
+    box-shadow: 0 2px 6px #015ea0;
+    text-align: center;
+    box-sizing: border-box;
+}

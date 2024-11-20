@@ -1,0 +1,31 @@
+.input_container input{
+    font-family: "Roboto";
+    font-size: 22.6px;
+    font-weight: 400;
+    line-height: 32.49px; 
+    padding: 23px 20px;
+    border: 1.41px solid #00000061;
+    border-radius: 11.3px;
+    display: block;
+    margin: 0 0 28px;
+    width: 100%;
+    box-sizing: border-box;
+    height: 81px;
+}
+.input_container input:focus{
+    outline:1px solid #3888E7;
+  }
+
+  @media screen and (max-width: 1600px){ 
+    .form_container div>input{
+      height: 70px;
+    }
+  }
+  @media screen and (max-width: 767px){
+    .input_container input{
+      height: 60px;
+      font-size: 17px;
+      margin: 0 0 15px;
+      padding: 10px;
+    }
+  }
