@@ -27,6 +27,10 @@ const ProfileForm = () => {
 
   const [isPopUpVisible, setIsPopUpVisible] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
+  const [tempScopes, setTempScopes] = useState(formData.scopes || []);
+  const [tempInterests, setTempInterests] = useState(formData.interests || []);
+  const [tempLinks, setTempLinks] = useState(formData.links || []);
+  const [avatar, setAvatar] = useState(formData.avatar || null);
 
   useEffect(() => {
     const savedData = localStorage.getItem("profileData");
@@ -34,6 +38,7 @@ const ProfileForm = () => {
       const parsedData = JSON.parse(savedData);
       setFormData(parsedData);
       setIsEditing(parsedData.visibility === "Private");
+      setAvatar(parsedData.avatar);
     } else {
       setIsEditing(true);
     }
@@ -47,7 +52,14 @@ const ProfileForm = () => {
     await trigger();
     if (!isValid) return;
     try {
-      const updatedData = { ...formData, ...data };
+      const updatedData = {
+        ...formData,
+        ...data,
+        avatar,
+        scopes: tempScopes,
+        interests: tempInterests,
+        links: tempLinks,
+      };
       setFormData(updatedData);
       localStorage.setItem("profileData", JSON.stringify(updatedData));
       setIsEditing(false);
@@ -65,27 +77,25 @@ const ProfileForm = () => {
 
   const enableEditing = () => setIsEditing((prev) => !prev);
 
-  const handleAvatarChange = (avatar) => {
-    setValue("avatar", avatar);
-    setFormData((prev) => ({ ...prev, avatar }));
+  const handleAvatarChange = (newAvatar) => {
+    setAvatar(newAvatar);
+    setValue("avatar", newAvatar);
   };
 
   const handleDeleteItem = (itemToDelete, listType) => {
-    setFormData((prevData) => {
-      const updatedList = prevData[listType].filter(
-        (item) => item !== itemToDelete
-      );
-      return {
-        ...prevData,
-        [listType]: updatedList,
-      };
-    });
+    if (listType === "scopes") {
+      setTempScopes((prev) => prev.filter((item) => item !== itemToDelete));
+    } else if (listType === "interests") {
+      setTempInterests((prev) => prev.filter((item) => item !== itemToDelete));
+    } else if (listType === "links") {
+      setTempLinks((prev) => prev.filter((item) => item !== itemToDelete));
+    }
   };
 
   return (
     <div className={styles.form_container}>
       <AvatarUploader
-        avatar={formData.avatar}
+        avatar={avatar}
         isEditing={isEditing}
         onAvatarChange={handleAvatarChange}
       />
@@ -209,12 +219,9 @@ const ProfileForm = () => {
             <FormList
               {...field}
               label="The scopes of your interest"
-              items={formData.scopes}
+              items={tempScopes}
               onAddItem={(newItem) =>
-                setFormData((prev) => ({
-                  ...prev,
-                  scopes: [...prev.scopes, newItem],
-                }))
+                setTempScopes((prev) => [...prev, newItem])
               }
               disabled={!isEditing}
               onDeleteItem={(itemToDelete) =>
@@ -230,12 +237,9 @@ const ProfileForm = () => {
             <FormList
               {...field}
               label="Potential interests"
-              items={formData.interests}
+              items={tempInterests}
               onAddItem={(newItem) =>
-                setFormData((prev) => ({
-                  ...prev,
-                  interests: [...prev.interests, newItem],
-                }))
+                setTempInterests((prev) => [...prev, newItem])
               }
               disabled={!isEditing}
               onDeleteItem={(itemToDelete) =>
@@ -251,15 +255,11 @@ const ProfileForm = () => {
             <LinkItems
               {...field}
               label="Your links"
-              items={formData.links}
+              items={tempLinks}
               onAddItem={(newItem) =>
-                setFormData((prev) => ({
-                  ...prev,
-                  links: [...prev.links, newItem],
-                }))
+                setTempLinks((prev) => [...prev, newItem])
               }
               disabled={!isEditing}
-              error={errors.links?.message}
               onDeleteItem={(itemToDelete) =>
                 handleDeleteItem(itemToDelete, "links")
               }
